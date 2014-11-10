@@ -32,7 +32,8 @@ if(angular !== undefined){
 
             // init the switch
             $(ele).bootstrapSwitch(options);
-            $(ele).bootstrapSwitch('state', $(ele).val(), true); 
+            eval('var curEval = scope.'+attr.bsSwitch+';');
+            $(ele).bootstrapSwitch('state', curEval, true); 
 
             // watch the binding value
             scope.$watch(attr.bsSwitch, function(newState, oldState){
